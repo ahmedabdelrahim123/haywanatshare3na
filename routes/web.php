@@ -18,8 +18,11 @@ use App\Http\Controllers\OurregisterController;
  Route::get('/', function () {
      return view('our.ourwelcome');
  });
+ Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+ 
 
  Route::get('/ourregister', [OurregisterController::class, 'index'])->name('ourregister');
+ Route::post('/ourregister', [OurregisterController::class, 'store']);
 
  Route::get('/ourlogin', [OurloginController::class, 'index'])->name('ourlogin');
 
