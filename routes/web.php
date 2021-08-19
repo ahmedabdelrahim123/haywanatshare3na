@@ -26,6 +26,10 @@ use App\Http\Controllers\OurregisterController;
 
  Route::get('/ourlogin', [OurloginController::class, 'index'])->name('ourlogin');
 
+ // my edit
+  Route::post('/ourlogin', [OurloginController::class, 'store']);
+ //
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
