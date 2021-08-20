@@ -1,15 +1,16 @@
 @extends('our.ourwelcome')
 @section('content')
-    <div class='flex justify-center'>
-        <div class='w-3/12 p-4 rounded-lg bg-gray-200'>
-            <form action="{{route('ourlogin')}}" method="post">
-                @csrf
-                @if (session('status'))
+    <div class="flex justify-center pt-20 bg-gradient-to-r from-green-400 to-blue-500 h-screen">
+        <div class='w-3/12 p-4 rounded-lg bg-gray-200 h-2/5'>
+        @if (session('status'))
                     <div class="bg-red-500 p-4 rounded-lg mb-6 text-black text-center">
                         {{session('status')}}
                     </div>
 
                 @endif
+            <form action="{{route('ourlogin')}}" method="POST">
+                @csrf
+                
                 <div class="mb-4">
                     <label for="email" class="sr-only">Email</label>
                     <input type="text" name="email" id="email" placeholder="Your email" 
@@ -32,9 +33,12 @@
                         </div>
                     @enderror
                 </div>
-
-                
-
+                <div class="mb-4">
+                        <div class="flex items-center">
+                            <input type="checkbox" name="remember" id="remember" class="mr-2">
+                            <label for="remember">Remember Me</label>
+                        </div>
+                    </div>
                 <div>
                     <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Login</button>
                 </div>

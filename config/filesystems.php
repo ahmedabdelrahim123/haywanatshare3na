@@ -28,6 +28,20 @@ return [
     |
     */
 
+    'offers' => [
+        'driver' => 'local',
+        'root' => base_path().'public/images/offers/',
+        'url' => env('APP_URL').'/public',
+        'visibility' => 'public',
+    ],
+
+    'animals' => [
+        'driver' => 'local',
+        'root' => base_path().'public/images/animals/',
+        'url' => env('APP_URL').'/public',
+        'visibility' => 'public',
+    ],
+
     'disks' => [
 
         'local' => [

@@ -1,7 +1,7 @@
 @extends('our.ourwelcome')
 @section('content')
-    <div class='flex justify-center'>
-        <div class='w-3/12 p-4 rounded-lg bg-gray-200'>
+    <div class='flex justify-center  pt-20 bg-gradient-to-r from-green-400 to-blue-500 h-screen'>
+        <div class='w-3/12 p-4 rounded-lg bg-gray-200 h-2/3'>
             <form action="{{route('ourregister')}}" method="post">
                 @csrf
                 <div class="mb-4">
@@ -11,17 +11,6 @@
                     value="{{ old('name') }}">
                     @error('name')
                         <div class="text-red-500 mt-2 text-sm">
-                            {{$message}}
-                        </div>
-                    @enderror
-                </div>
-                <div class="mb-4">
-                    <label for="username" class="sr-only">Username</label>
-                    <input type="text" name="username" id="username" placeholder="Username" 
-                    class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('username') border-red-500 @enderror" 
-                    value="{{ old('username') }}">
-                    @error('username')
-                        <div class="text-green-500 mt-2 text-sm">
                             {{$message}}
                         </div>
                     @enderror
